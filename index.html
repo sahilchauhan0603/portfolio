@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahil Chauhan</title>
     <link rel="stylesheet" href="font.css" />
@@ -67,6 +68,148 @@
           font-size: 20px; /* Smaller navigation buttons */
         }
       }
+      
+      .heading {
+        margin-top: 20pt;
+        margin-bottom: 20pt;
+        font-size: 35px;
+        color: #9b9eb0;
+        line-height: 30px;
+      }
+
+      .role {
+        color: #d1cfe8;
+        font-weight: 800;
+      }
+      
+      .subHeading {
+        font-size: 45px;
+        line-height: 40px;
+      }
+
+      .imgContainer {
+        background-color: white;
+        display: flex; /* Use Flexbox to align items horizontally */
+        justify-content: center; /* Aligns items to the left */
+        align-items: center; /* Vertically align items in the center */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        margin-left: 120pt;
+        margin-right: 80pt;
+      }
+
+      .userImage {
+        padding: 0; /* Remove padding */
+        transition: all 1s;
+        animation: scaleImage 5s linear infinite;
+        width: 250px; /* Set the image width */
+        height: 250px; /* Set the image height */
+        /* margin-right: 16px; Space between image and name */
+        object-fit: cover; /* Ensures the image doesn't stretch or get distorted */
+      }
+      
+      @keyframes scaleImage {
+        0% {
+          scale: 1;
+          filter: grayscale(1);
+        }
+      
+        50% {
+          filter: grayscale(0);
+          box-shadow: 3px 3px 10px black;
+          scale: 0.9;
+        }
+      
+        100% {
+          scale: 1;
+          filter: grayscale(1);
+        }
+      }
+      
+      .userImage img {
+        z-index: -9;
+        width: 100%;
+      }
+
+      /* Skill Section Start  */
+.skillContainer {
+  position: relative;
+  display: flex;
+  padding: 5rem;
+  margin: 10rem auto;
+  gap: 30px;
+}
+
+.leftSkillContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.skillHeading {
+  color: #e84949;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.skillHeading span {
+  font-size: 90px;
+}
+
+.skillSubHeading {
+  margin-top: 1rem;
+  width: 85%;
+  text-align: justify;
+}
+.skillSubHeading p {
+  margin: 15px 0;
+}
+.rightSkillContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 50%;
+  position: relative;
+  justify-content: center;
+}
+
+.blobStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: blobAnimation 3s linear infinite;
+}
+
+@keyframes blobAnimation {
+  50% {
+    top: 54%;
+    left: 46%;
+  }
+}
+
+.skillsLogo {
+  width: 80px;
+  transition: all 0.5s;
+}
+
+.skillsLogo:hover {
+  transform: scale(1.2);
+}
+
+.skillFadedText {
+  font-size: 12em;
+  right: -9%;
+  bottom: -35%;
+  user-select: none;
+  color: #e7e7e7;
+  font-weight: bold;
+}
+
+/* Skill Section End  */
+      
     </style>
       
     <script src="./matter.js" defer></script>
@@ -252,21 +395,63 @@
               </linearGradient>
             </defs>
           </svg>
+
           <div class="relative ml-4 md:ml-12">
-            <h1
+            <!-- <h1
               class="pointer-events-none text-4xl md:text-[64px] font-['Spartan'] mr-12"
             >
               Sahil Chauhan
             </h1>
-            <p
-              class="pointer-events-none font-['Merriweather'] italic my-4 md:my-8"
-            >
-              Full Stack Developer
-            </p>
 
-            <button id="about-button" class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group">
-              About Me 
-            </button>
+            <div class="heading subHeading">
+              I am a <span class="role"></span>
+            </div>
+            
+            <div class="imgContainer ">
+              <div class="userImage">             
+                <img src="./assets/images/sahil.jpg" alt="" />
+              </div>
+            </div>
+
+            <p class="mb-16">
+              I’m a software developer and here is my portfolio website.
+              <br>
+               Here you’ll learn about my journey as a software developer.
+            </p> -->
+
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between space-y-8 md:space-y-0 md:space-x-8 px-4 md:px-16">
+              <!-- Left Section: Text Content -->
+              <div class="flex flex-col items-center md:items-start">
+                <h1 class="pointer-events-none text-4xl md:text-[64px] font-['Spartan']">
+                  Sahil Chauhan
+                </h1>
+                <div class="heading subHeading text-lg md:text-xl mt-4">
+                  I am a <span class="role"></span>
+                </div>
+                <p class="mt-6 text-center md:text-left text-gray-600">
+                  I’m a software developer, and here is my portfolio website.
+                  <br>
+                  Here you’ll learn about my journey as a software developer.
+                </p>
+              </div>
+            
+              <!-- Right Section: Image -->
+              <div class="imgContainer flex justify-center md:justify-end">
+                <img
+                  src="./assets/images/sahil.jpg"
+                  alt="Sahil Chauhan"
+                  class="userImage w-48 h-48 object-cover shadow-lg md:mr-4"
+                />
+              </div>
+            </div>
+            
+
+            
+           
+            <a href="#skills" id="about-button" class="bg-[#4595eb] py-2 mt-6 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group">
+              About Me
+            </a>
+            
 
         
           </div>
@@ -339,8 +524,7 @@
       <div
         class="relative self-center after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:left-1/2 after:-translate-x-1/2 after:top-[100px]"
       >
-        <button
-          class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group mb-20"
+        <a href="#latest" class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group mb-12"
         >
           Latest Works
 
@@ -383,12 +567,12 @@
               />
             </g>
           </svg>
-        </button>
+        </a>
       </div>
     </section>
 
 
-    <section class="max-w-screen-xl mx-auto px-4 relative pb-8 sm:pb-16">
+    <section class="max-w-screen-xl mx-auto px-4 relative pb-8 sm:pb-16" id="latest">
       <h2 class="text-3xl sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#1788ae] sm:border-b-2 border-[#1788ae]">
         Latest Works
       </h2>
@@ -887,10 +1071,67 @@
         class="w-[2px] hidden sm:block bg-[#1788ae] absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
       ></div>
     </section>
+
+    <!-- Skill Section Start  -->
+      <!-- <h2 class="text-3xl sm:text-[40px] bg-[#111] sm:w-max relative z-10 mt-16 font-bold px-4 py-2 mx-auto text-center text-[#1788ae] sm:border-2 border-[#1788ae] rounded-md">
+        Skills
+      </h2> -->
     
-    <section class="max-w-screen-xl mx-auto pb-12">
+    <section class="skillContainer" id="skills">
+      <!-- <div class="skillFadedText absolute">Skills</div> -->
+      <div class="leftSkillContainer">
+        <h2 class="skillHeading"><span>M</span>e and <br />My Tech Stack</h2>
+        <div class="skillSubHeading">
+          <p>
+            Hi Everyone. My name is Sahil Chauhan. 
+            I am a passionate software developer with a strong focus on creating impactful and user-friendly solutions. 
+            My journey as a developer is driven by curiosity, creativity, and a commitment to continuous learning. 
+            I thrive on solving complex challenges, whether it's building robust backend systems, designing intuitive user interfaces, or optimizing workflows. 
+            Outside of coding, I enjoy exploring innovative ideas and collaborating with like-minded individuals to bring visions to life.
+          </p>
+          <p>
+            I specialize in a versatile tech stack that includes modern tools and frameworks for both frontend and backend development. 
+            On the frontend, I work extensively with ReactJS, Tailwind CSS, and JavaScript, crafting responsive and dynamic user interfaces. 
+            On the backend, I leverage the power of NodeJS, NestJS, and GoLang for building scalable APIs and robust server-side applications. 
+            Additionally, I am proficient in database management with MySQL and adept at integrating third-party tools and APIs to deliver seamless user experiences. 
+            This stack empowers me to build end-to-end solutions efficiently.
+          </p>
+        </div>
+      </div>
+
+      <div class="rightSkillContainer">
+        <img src="./assets/images/blob vector.png" class="blobStyle" alt="" />
+
+        <img src="./assets/stack/HTML.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/CSS.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Javascript.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/React.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/NodeJs.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Redux.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Git.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Express.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Tailwind.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Bootstrap.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/MaterialUI.svg" alt="" class="skillsLogo" />     
+        <img src="./assets/stack/Vercel.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Next.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Git.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Github.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Graphql.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/MongoDB.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Tailwind.png" alt="" class="skillsLogo" />
+        <img src="./assets/stack/ChartJs.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Bash.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/Docker.svg" alt="" class="skillsLogo" />
+        <img src="./assets/stack/K8s.svg" alt="" class="skillsLogo" />
+      </div>
+    </section>
+    <!-- Skill Section End  -->
+
+    
+    <section class="max-w-screen-xl mx-auto px-4 pb-12">
       <h2
-        class="text-3xl sm:text-[40px] bg-[#111] sm:w-max relative z-10 mt-16 font-bold px-4 py-2 mx-auto text-center text-[#1788ae] sm:border-2 border-[#1788ae] rounded-md"
+        class="text-3xl sm:text-[40px] bg-[#111] sm:w-max relative z-10 font-bold px-4 py-2 mx-auto text-center text-[#1788ae] sm:border-2 border-[#1788ae] rounded-md"
       >
         Experience
       </h2>
@@ -898,7 +1139,7 @@
         <div class="swiper-wrapper items-center">
           <div class="swiper-slide px-4">
             <div
-              class="flex flex-col md:flex-row w-full md:max-w-[800px] items-center rounded-lg p-9 shadow-[0_0px_50px_rgba(59,130,246,0.6)] cursor-grab"
+              class="flex flex-col md:flex-row w-full md:max-w-[800px] items-center rounded-lg p-6 shadow-[0_0px_50px_rgba(59,130,246,0.6)] cursor-grab"
             >
               <img
                 class="shrink-0 w-[120px] h-[120px] md:w-[180px] md:h-[180px] rounded-full drop-shadow-[0_0px_80px_rgba(59,130,246,1)]"
@@ -926,18 +1167,24 @@
             </div>
           </div>
 
-          <!-- <div class="swiper-slide px-4">
+          <div class="swiper-slide px-4">
             <div
               class="flex flex-col md:flex-row max-w-[800px] items-center rounded-lg p-9 shadow-[0_0px_50px_rgba(59,130,246,0.6)] cursor-grab"
             >
               <img
                 class="shrink-0 w-[120px] h-[120px] md:w-[180px] md:h-[180px] rounded-full drop-shadow-[0_0px_80px_rgba(59,130,246,1)]"
-                src="/assets/images/kira.webp"
+                src="/assets/stack/Docker.svg"
                 alt="testimonial 3"
               />
               <div
                 class="testimonial-text ml-6 text-left pt-6 md:pt-16 relative"
               >
+              <h4 class=" text-[#459bd5] font-bold text-2xl md:text-4xl text-centre">
+                IEEE Tech Team, BPIT - 2023
+            </h4>
+            <h5 class="text-left text-[#459bd5] text-base md:text-lg">
+                IEEE, BPIT
+            </h5>
                 <p class="text-sm md:text-base mb-2">
                   “Anurag was a wonderful developer to work with! He anticipated
                   everything I need to consider for my website. He also went the
@@ -945,17 +1192,11 @@
                   helping my business grow, and I will definitely work with him
                   again!”
                 </p>
-                <h2
-                  class="text-right text-[#459bd5] font-bold text-2xl md:text-4xl"
-                >
-                  Kira Bragg
-                </h2>
-                <h5 class="text-right text-[#459bd5] text-base md:text-lg">
-                  English Mentor
-                </h5>
+                
+          
               </div>
             </div>
-          </div> -->
+          </div>
 
           <!-- <div class="swiper-slide px-4">
             <div
@@ -1185,7 +1426,7 @@
       </ul>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -1203,5 +1444,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      var typeData = new Typed(".role", {
+        strings: [
+          "Full Stack Developer",
+          "Web Developer",
+          "UI-UX Designer",
+          "Backend Developer",
+          "Coder",
+        ],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1000,
+      });
+    </script>
+
   </body>
 </html>
